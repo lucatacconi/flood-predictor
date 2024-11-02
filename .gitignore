@@ -10,3 +10,7 @@ composer.lock
 #Ignore all log but conserve directory structure
 var/logs/*
 !var/logs/.htaccess
+
+#Ignore db but conserve directory structure
+db/*
+!db/.htaccess
