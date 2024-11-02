@@ -1,0 +1,42 @@
+{
+    "name": "lucatacconi/flood-predictor",
+    "description": "Flood forecast for the Ticino river, along the banks of the city of Pavia in Italy",
+    "type": "project",
+    "keywords": [
+        "Machine learning"
+    ],
+    "homepage": "https://github.com/lucatacconi/flood-predictor/tree/master",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Luca Tacconi",
+            "email": "luca.tacconi@monolite.net",
+            "homepage": "http://www.monolite.net",
+            "role": "Developer"
+        },
+        {
+            "name": "Emanuele Marchesotti",
+            "homepage": "https://github.com/flagellarmirror",
+            "role": "Developer"
+        }
+    ],
+
+    "require": {
+        "slim/slim": "^4",
+        "slim/psr7": "^1",
+        "nyholm/psr7": "^1",
+        "nyholm/psr7-server": ">=0",
+        "guzzlehttp/guzzle": "^7",
+        "laminas/laminas-diactoros": "^2",
+        "php-di/php-di": "^6",
+
+        "monolog/monolog": "^2",
+        "tuupola/base62": "^2",
+        "tuupola/slim-basic-auth": "^3",
+        "vlucas/phpdotenv": "^5",
+        "twig/twig": "^3",
+
+        "jimtools/jwt-auth": "^1.0",
+        "firebase/php-jwt": "^6.10"
+    }
+}
