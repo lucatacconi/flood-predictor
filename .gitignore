@@ -6,3 +6,7 @@ composer.lock
 
 #Ignore IDEs' configuration directory
 .vscode
+
+#Ignore all log but conserve directory structure
+var/logs/*
+!var/logs/.htaccess
