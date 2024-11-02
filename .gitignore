@@ -1,0 +1,8 @@
+
+# Ignore all lib e vendor file
+vendor/*
+!vendor/.htaccess
+composer.lock
+
+#Ignore IDEs' configuration directory
+.vscode
