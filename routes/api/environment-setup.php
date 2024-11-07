@@ -28,6 +28,8 @@ $app->group('/admin', function (RouteCollectorProxy $group) {
 
         $subGroup->post('/db-preset', function (Request $request, Response $response, array $args) {
 
+            $aDBPRESETs = $this->get('configs')["app_configs"]["db-preset"];
+
             $data = 'Alive';
 
             $response->getBody()->write(json_encode($data, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT));
