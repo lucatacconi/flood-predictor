@@ -1,6 +1,6 @@
 {
     "read_data_history": {
-        "drop": "drop table if exists read_data_history;",
-        "create": " create table read_data_history ( 'RDHS_ID' integer not null primary key autoincrement, 'RDHS_READ_LOG' text not null, 'RDHS_DATE_INS' text not null ); "
+        "drop-if-exist": true,
+        "create-sql": " create table read_data_history ( 'RDHS_ID' integer not null primary key autoincrement, 'RDHS_READ_LOG' text not null, 'RDHS_DATE_INS' text not null ); "
     }
 }
