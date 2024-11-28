@@ -40,17 +40,18 @@ $container_config["app_configs"]["paths"]["base_path"] = $dir;
 $container = new Container();
 $container->set('configs', $container_config);
 
-$container->set('errorHandler', function ($container) {
-    return function ($request, $response, $exception) use ($container) {
-        $data = [];
-        $data["status"] = "Engine error";
-        $data["message"] = $exception->getMessage();
+// $container->set('errorHandler', function ($container) {
+//     return function ($request, $response, $exception) use ($container) {
+//         $data = [];
+//         $data["status"] = "Engine error";
+//         $data["message"] = $exception->getMessage();
+//         $data["code"] = $exception->getCode().'--'.$exception->getFile().'--'.$exception->getLine();
 
-        $response->getBody()->write(json_encode($data, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT));
-        return $response->withStatus(500)
-                        ->withHeader("Content-Type", "application/json");
-    };
-});
+//         $response->getBody()->write(json_encode($data, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT));
+//         return $response->withStatus(500)
+//                         ->withHeader("Content-Type", "application/json");
+//     };
+// });
 
 
 AppFactory::setContainer($container);
@@ -110,6 +111,7 @@ $customErrorHandler = function (
     $data = [];
     $data["status"] = "Engine error";
     $data["message"] = $exception->getMessage();
+    $data["code"] = $exception->getCode().'-'.$exception->getLine();
 
     $response = $app->getResponseFactory()->createResponse();
     $response->getBody()->write(json_encode($data, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT));
