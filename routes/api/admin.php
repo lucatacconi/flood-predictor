@@ -6,21 +6,9 @@ use Slim\Routing\RouteCollectorProxy;
 
 use Ramsey\Uuid\Uuid;
 
-use Crunz\Configuration\Configuration;
-use Crunz\Schedule;
-use Crunz\Filesystem;
-use Crunz\Task\Collection;
-use Crunz\Task\WrongTaskInstanceException;
-
 foreach (glob(__DIR__ . '/../classes/*.php') as $filename){
     require_once $filename;
 }
-
-use Symfony\Component\Yaml\Yaml;
-use Symfony\Component\Mailer\Transport;
-use Symfony\Component\Mailer\Mailer;
-use Symfony\Component\Mime\Email;
-use Symfony\Component\Mime\Address;
 
 $app->group('/admin', function (RouteCollectorProxy $group) {
 
